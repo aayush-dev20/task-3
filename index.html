@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Elements | JavaScript Task</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-code"></i> Interactive Web Elements</h1>
+            <p class="subtitle">JavaScript DOM Manipulation & User Interaction</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Section 1: Theme Toggle & Counter -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-palette"></i> Theme Toggle & Counter</h2>
+                <p>Toggle between light and dark themes and interact with a counter.</p>
+                
+                <div class="theme-controls">
+                    <button id="themeToggle" class="btn btn-toggle">
+                        <i class="fas fa-moon"></i> Switch to Dark Mode
+                    </button>
+                    
+                    <div class="counter-container">
+                        <h3>Counter: <span id="counterValue">0</span></h3>
+                        <div class="counter-buttons">
+                            <button id="decrementBtn" class="btn btn-secondary">
+                                <i class="fas fa-minus"></i> Decrease
+                            </button>
+                            <button id="incrementBtn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Increase
+                            </button>
+                            <button id="resetCounterBtn" class="btn btn-danger">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Dynamic Content -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-sync-alt"></i> Dynamic Content Update</h2>
+                <p>Update content dynamically based on user input and actions.</p>
+                
+                <div class="dynamic-content-container">
+                    <div class="input-group">
+                        <input type="text" id="textInput" placeholder="Enter text to display below..." class="text-input">
+                        <button id="updateTextBtn" class="btn btn-primary">
+                            <i class="fas fa-arrow-circle-down"></i> Update Text
+                        </button>
+                    </div>
+                    
+                    <div class="display-box" id="textDisplay">
+                        Your text will appear here...
+                    </div>
+                    
+                    <div class="color-picker">
+                        <h3>Change Display Color:</h3>
+                        <div class="color-options">
+                            <button class="color-option" data-color="#3498db" style="background-color: #3498db;"></button>
+                            <button class="color-option" data-color="#2ecc71" style="background-color: #2ecc71;"></button>
+                            <button class="color-option" data-color="#e74c3c" style="background-color: #e74c3c;"></button>
+                            <button class="color-option" data-color="#f39c12" style="background-color: #f39c12;"></button>
+                            <button class="color-option" data-color="#9b59b6" style="background-color: #9b59b6;"></button>
+                            <button class="color-option" data-color="#1abc9c" style="background-color: #1abc9c;"></button>
+                        </div>
+                        <button id="resetColorBtn" class="btn btn-outline">
+                            <i class="fas fa-undo"></i> Reset Color
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Toggle Elements -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-eye"></i> Show/Hide Toggle</h2>
+                <p>Toggle the visibility of elements on the page.</p>
+                
+                <div class="toggle-container">
+                    <div class="toggle-header">
+                        <button id="toggleContentBtn" class="btn btn-toggle">
+                            <i class="fas fa-eye"></i> Show Hidden Content
+                        </button>
+                        <span class="toggle-status" id="toggleStatus">Currently Hidden</span>
+                    </div>
+                    
+                    <div class="hidden-content" id="hiddenContent">
+                        <h3>🎉 Surprise! You found the hidden content!</h3>
+                        <p>This content was hidden but now it's visible thanks to JavaScript DOM manipulation.</p>
+                        <p>You can toggle this section on and off using the button above.</p>
+                        <div class="emoji-container">
+                            <span class="emoji">😊</span>
+                            <span class="emoji">👍</span>
+                            <span class="emoji">🎯</span>
+                            <span class="emoji">🚀</span>
+                            <span class="emoji">💡</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Interactive List -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-list"></i> Interactive Task List</h2>
+                <p>Add, remove, and mark tasks as complete in a dynamic list.</p>
+                
+                <div class="task-container">
+                    <div class="task-input-group">
+                        <input type="text" id="taskInput" placeholder="Enter a new task..." class="text-input">
+                        <button id="addTaskBtn" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Add Task
+                        </button>
+                    </div>
+                    
+                    <div class="task-list-container">
+                        <h3>Your Tasks: <span id="taskCount">0</span></h3>
+                        <div id="taskList" class="task-list">
+                            <!-- Tasks will be added here dynamically -->
+                            <div class="task-item empty-task">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>No tasks yet. Add your first task above!</span>
+                            </div>
+                        </div>
+                        
+                        <div class="task-controls">
+                            <button id="clearCompletedBtn" class="btn btn-outline">
+                                <i class="fas fa-check-double"></i> Clear Completed
+                            </button>
+                            <button id="clearAllTasksBtn" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i> Clear All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Random Generator -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-random"></i> Random Content Generator</h2>
+                <p>Generate random content, colors, and numbers with a click.</p>
+                
+                <div class="random-generator">
+                    <div class="generator-controls">
+                        <button id="randomQuoteBtn" class="btn btn-primary">
+                            <i class="fas fa-quote-right"></i> Random Quote
+                        </button>
+                        <button id="randomNumberBtn" class="btn btn-primary">
+                            <i class="fas fa-dice"></i> Random Number
+                        </button>
+                        <button id="randomColorBtn" class="btn btn-primary">
+                            <i class="fas fa-fill-drip"></i> Random Color
+                        </button>
+                    </div>
+                    
+                    <div class="generator-results">
+                        <div class="result-box" id="quoteResult">
+                            <h3>Random Quote:</h3>
+                            <p id="quoteText">Click the button to generate a random quote.</p>
+                            <p id="quoteAuthor"></p>
+                        </div>
+                        
+                        <div class="result-box" id="numberResult">
+                            <h3>Random Number:</h3>
+                            <p id="numberText">Click the button to generate a random number between 1 and 100.</p>
+                            <div class="number-display" id="numberDisplay">?</div>
+                        </div>
+                        
+                        <div class="result-box" id="colorResult">
+                            <h3>Random Color:</h3>
+                            <p id="colorText">Click the button to generate a random color.</p>
+                            <div class="color-display" id="colorDisplay">
+                                <div class="color-sample" id="colorSample"></div>
+                                <div class="color-code" id="colorCode">#FFFFFF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Form Validation -->
+            <section class="card interactive-section">
+                <h2><i class="fas fa-check-circle"></i> Form Validation</h2>
+                <p>Interactive form with real-time validation feedback.</p>
+                
+                <div class="form-container">
+                    <form id="interactiveForm">
+                        <div class="form-group">
+                            <label for="userName">Name:</label>
+                            <input type="text" id="userName" placeholder="Enter your name" class="form-input">
+                            <div class="validation-message" id="nameValidation"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userEmail">Email:</label>
+                            <input type="email" id="userEmail" placeholder="Enter your email" class="form-input">
+                            <div class="validation-message" id="emailValidation"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userMessage">Message:</label>
+                            <textarea id="userMessage" placeholder="Enter your message" rows="4" class="form-input"></textarea>
+                            <div class="validation-message" id="messageValidation"></div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" id="submitFormBtn" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Submit Form
+                            </button>
+                            <button type="button" id="resetFormBtn" class="btn btn-outline">
+                                <i class="fas fa-eraser"></i> Reset Form
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="form-result" id="formResult">
+                        <h3>Form Submission Result:</h3>
+                        <p id="resultMessage">Your form submission will appear here.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3><i class="fas fa-laptop-code"></i> JavaScript Interactive Elements</h3>
+                    <p>Task 3: Interactive Web Elements - Demonstrating DOM manipulation and user interaction with JavaScript.</p>
+                </div>
+                
+                <div class="footer-stats">
+                    <div class="stat">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <span>Clicks: <span id="totalClicks">0</span></span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>Page Active: <span id="pageTimer">0</span>s</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-toggle-on"></i>
+                        <span>Theme: <span id="currentTheme">Light</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Created for JavaScript Interactive Elements Task | All interactions powered by vanilla JavaScript</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
